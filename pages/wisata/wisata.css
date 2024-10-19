@@ -1,26 +1,13 @@
 /* Wisata Page Style */
 /* Hero Section */
-.hero-wisata {
-    background: url('assets/hero-wisata-bg.jpg') no-repeat center center/cover;
+.hero.wisata {
+    background: url('../../assets/wisata-bg-hero.jpeg') no-repeat fixed bottom/cover;
     height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: white;
-}
-
-.hero-wisata h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-
-.hero-wisata p {
-    font-size: 1.5rem;
-}
-
-.hero-content {
-    animation: fadeIn 2s ease-in-out;
 }
 
 /* Tour Section */
@@ -42,10 +29,8 @@
 }
 
 .tour-card {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     background-color: #fff;
     margin-bottom: 30px;
     padding: 20px;
@@ -60,12 +45,17 @@
 }
 
 .tour-card img {
-    width: 40%;
+    align-self: center;
+    width: 100%;
     border-radius: 10px;
     object-fit: cover;
+    max-height: 400px;
+    min-height: 275px;
 }
 
 .tour-info {
+    display: grid;
+    align-content: space-between;
     text-align: left;
     padding: 0 20px;
     flex-grow: 1;
@@ -74,12 +64,10 @@
 .tour-info h3 {
     font-size: 2rem;
     color: #ff7c43;
-    margin-bottom: 15px;
 }
 
 .tour-info p {
     font-size: 1.1rem;
-    margin-bottom: 10px;
     line-height: 1.6;
 }
 
@@ -97,29 +85,26 @@
     background-color: #e56b39;
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
 /* Responsive Styles */
 @media (max-width: 768px) {
     .tour-card {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         text-align: center;
     }
 
     .tour-card img {
-        width: 100%;
         margin-bottom: 20px;
     }
 
     .tour-info {
         padding: 0;
+    }
+
+    .tour-info h3 {
+        margin-bottom: 20px;
+    }
+
+    .tour-info p {
+        margin-bottom: 10px;
     }
 }

@@ -1,0 +1,153 @@
+/* Galeri Page Style */
+/* Hero Section */
+.hero.gallery {
+    background: url('assets/hero-gallery-bg.jpg') no-repeat center center/cover;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero.gallery h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero.gallery p {
+    font-size: 1.5rem;
+}
+
+.hero-content {
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Gallery Section */
+.gallery-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.gallery-section h2 {
+    font-size: 2.5rem;
+    color: #ff7c43;
+    margin-bottom: 40px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Pagination */
+.pagination {
+    margin-top: 20px;
+}
+
+.page-bubble {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    background-color: #ff7c43;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.page-bubble.active {
+    background-color: #ff5500;
+}
+
+.page-bubble:hover {
+    background-color: #ff5500;
+}
+
+/* Popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.popup-content {
+    max-width: 80%;
+    max-height: 80%;
+    margin: auto;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .popup-content {
+        max-width: 90%;
+        max-height: 70%;
+    }
+
+    .prev, .next {
+        font-size: 20px;
+    }
+}

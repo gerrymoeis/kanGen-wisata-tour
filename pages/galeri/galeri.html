@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KanGen Wisata Tour didirikan oleh Mustiady pada tahun 2010 dengan visi untuk menghadirkan pengalaman wisata yang menyenangkan dan aman.">
+    <link rel="icon" href="./../../assets/logo.png" type="image/icon type">
+    <link rel="stylesheet" href="./../../index.css">
+    <link rel="stylesheet" href="./galeri.css">
+    <script src="https://kit.fontawesome.com/df6b5b225c.js" crossorigin="anonymous"></script>
+    <title>Galeri - KanGen Wisata Tour</title>
+</head>
+<body>
+    <div class="nav"></div>
+
+    <section class="hero gallery">
+        <div class="hero-content">
+            <h1>Galeri Wisata</h1>
+            <p>Kenangan terbaik dari perjalanan kami bersama.</p>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <h2>Pengalaman Wisata</h2>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openPopup(1)">
+                <img src="assets/photo1.jpg" alt="Gallery Image 1">
+            </div>
+            <div class="gallery-item" onclick="openPopup(2)">
+                <img src="assets/photo2.jpg" alt="Gallery Image 2">
+            </div>
+            <div class="gallery-item" onclick="openPopup(3)">
+                <img src="assets/photo3.jpg" alt="Gallery Image 3">
+            </div>
+            <div class="gallery-item" onclick="openPopup(4)">
+                <img src="assets/photo4.jpg" alt="Gallery Image 4">
+            </div>
+        </div>
+
+        <div class="pagination">
+            <span class="page-bubble active" onclick="switchPage(1)">1</span>
+            <span class="page-bubble" onclick="switchPage(2)">2</span>
+            <span class="page-bubble" onclick="switchPage(3)">3</span>
+        </div>
+
+        <div id="popup" class="popup">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <img id="popup-img" class="popup-content" src="">
+            <span class="prev" onclick="navigateGallery(-1)">&#10094;</span>
+            <span class="next" onclick="navigateGallery(1)">&#10095;</span>
+        </div>
+    </section>
+
+    <div class="footer"></div>
+
+    <script src="./galeri.js"></script>
+    <script src="./../../app.js"></script>
+</body>
+</html>
