@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
             links.forEach(link => {
                 link.classList.add('active');
             });
+
+            switchPage(1);
         })
         .catch(error => console.error('Error loading Navbar:', error));
     
@@ -33,16 +35,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
 let currentImageIndex = 0;
 const images = [
-    'assets/photo1.jpg',
-    'assets/photo2.jpg',
-    'assets/photo3.jpg',
-    'assets/photo4.jpg',
+    '../../assets/galeri1.jpeg',
+    '../../assets/galeri2.jpeg',
+    '../../assets/galeri3.jpeg',
+    '../../assets/galeri4.jpeg',
+
+    '../../assets/galeri5.jpeg',
+    '../../assets/galeri6.jpeg',
+    '../../assets/galeri7.jpeg',
+    '../../assets/galeri8.jpeg',
+
+    '../../assets/galeri9.jpeg',
+    '../../assets/galeri10.jpeg',
+    '../../assets/galeri11.jpeg',
+    '../../assets/galeri12.jpeg',
 ];
 
 function openPopup(index) {
-    currentImageIndex = index - 1;
-    document.getElementById('popup-img').src = images[currentImageIndex];
+    document.getElementById('popup-img').src = images[index];
     document.getElementById('popup').style.display = 'flex';
+    currentImageIndex = index;
 }
 
 function closePopup() {
@@ -64,12 +76,16 @@ function switchPage(pageNumber) {
     const galleryGrid = document.querySelector('.gallery-grid');
     galleryGrid.innerHTML = ''; // Clear current images
     // Load new images based on pageNumber (replace with actual logic)
-    images.slice((pageNumber - 1) * 4, pageNumber * 4).forEach((image, index) => {
+    images.slice((pageNumber - 1) * 4, pageNumber * 4).forEach((image, i) => {
+        const index = i + ((pageNumber - 1) * 4);
         const galleryItem = document.createElement('div');
         galleryItem.classList.add('gallery-item');
-        galleryItem.onclick = () => openPopup(index + 1);
+        galleryItem.onclick = () => openPopup(index);
+
         const imgElement = document.createElement('img');
         imgElement.src = image;
+        imgElement.alt = `Gallery Image ${index + 1}`;
+        
         galleryItem.appendChild(imgElement);
         galleryGrid.appendChild(galleryItem);
     });

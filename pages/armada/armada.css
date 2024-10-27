@@ -1,7 +1,7 @@
 /* Profil Page Style */
 /* Hero Section */
 .hero.armada {
-    background: url('../../assets/armada-bg-hero.jpeg') no-repeat center center/cover;
+    background: url('../../assets/armada-bg-hero.jpeg') no-repeat fixed center/cover;
     height: 60vh;
     display: flex;
     justify-content: center;

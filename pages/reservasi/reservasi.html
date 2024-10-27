@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KanGen Wisata Tour didirikan oleh Mustiady pada tahun 2010 dengan visi untuk menghadirkan pengalaman wisata yang menyenangkan dan aman.">
+    <link rel="icon" href="./../../assets/logo.png" type="image/icon type">
+    <link rel="stylesheet" href="./../../index.css">
+    <link rel="stylesheet" href="./reservasi.css">
+    <script src="https://kit.fontawesome.com/df6b5b225c.js" crossorigin="anonymous"></script>
+    <title>Reservasi - KanGen Wisata Tour</title>
+</head>
+<body>
+    <div class="nav"></div>
+
+    <section class="hero reservation">
+        <div class="hero-content">
+            <h1>Formulir <span>Reservasi</span></h1>
+            <p>Lengkapi data berikut untuk melanjutkan reservasi Anda.</p>
+        </div>
+    </section>
+
+        <!-- Reservation Form Section -->
+    <section class="reservation-section">
+        <form id="reservationForm" onsubmit="submitReservation(event)">
+            <h2>Data Reservasi</h2>
+
+            <!-- Identitas Pengguna -->
+            <label for="name">Nama Lengkap:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">Nomor Telepon:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="email">Email (Opsional):</label>
+            <input type="email" id="email" name="email">
+
+            <!-- Detail Teknis Tour -->
+            <label for="groupSize">Jumlah Orang:</label>
+            <input type="number" id="groupSize" name="groupSize" required min="1">
+
+            <label>Apakah Menginap?</label>
+            <div class="radio-group">
+                <label><input type="radio" name="stay" value="Ya" required> Ya</label>
+                <label><input type="radio" name="stay" value="Tidak" required> Tidak</label>
+            </div>
+
+            <label for="stayDuration">Berapa Hari Menginap? (Jika Menginap)</label>
+            <input type="number" id="stayDuration" name="stayDuration" min="1" disabled required>
+
+            <label for="destination">Destinasi Daerah:</label>
+            <input type="text" id="destination" name="destination" required>
+
+            <label for="notes">Pesan Tambahan (Opsional):</label>
+            <textarea id="notes" name="notes"></textarea>
+
+            <!-- Tombol Reservasi -->
+            <button type="submit">Reservasi via WhatsApp</button>
+        </form>
+    </section>
+
+    <div class="footer"></div>
+
+    <script src="./reservasi.js"></script>
+    <script src="./../../app.js"></script>
+</body>
+</html>
