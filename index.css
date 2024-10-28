@@ -173,7 +173,7 @@ a {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: url("./assets/home-bg-hero.jpeg") no-repeat center center/cover;
+    background: url("../../assets/home-bg-hero.jpeg") no-repeat center center/cover;
     background-attachment: fixed;
     display: flex;
     justify-content: center;
